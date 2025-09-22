@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex flex-1">
         {/* Left side with background color */}
         <div className="w-2/5 flex flex-col justify-center items-start bg-[#3B5435] text-[#F8E5D6] p-12">
-          <h1 className="text-4xl font-bold mb-4">Welcome!</h1>
+          <h1 className="text-4xl font-bold font-sans mb-4">Welcome!</h1>
           <p className="mb-6 text-lg">
             Sign in to access your ticket, view the event schedule, select
             workshops, and more!

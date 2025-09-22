@@ -1,6 +1,26 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { EB_Garamond, Ubuntu } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--font-eb-garamond",
+  weight: ["400", "700"],
+});
+
+const inter = Ubuntu({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "700"],
+});
+
+const windsol = localFont({
+  src: "./Windsol-Regular.ttf",
+  variable: "--font-windsol",
+  weight: "400",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +44,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body
+        className={`${windsol.className} ${ebGaramond.variable} ${inter.variable} font-bold antialiased bg-[#3B5435]`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
