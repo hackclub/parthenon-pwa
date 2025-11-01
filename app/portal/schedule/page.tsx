@@ -1,21 +1,89 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Title from "@/app/components/launch/Title";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function Schedule() {
+export default async function Schedule() {
+    const c = await cookies()
+      const USER_ID = c.get('user_id')?.value
+      
+      if (!USER_ID) {
+          redirect('/api/auth/slack/start')
+        }
+
+    const workshops = [
+        {
+          title: "Create your Own PCB Badge!",
+          description:
+            "Learn how to create your own PCB badge that you can show off at Parthenon!",
+          host: "Meghana",
+          time: "9 am",
+        },
+        {
+          title: "Learn some Game Dev in Godot",
+          description:
+            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus.",
+          host: "Estella",
+          time: "11 am",
+        },
+        {
+          title: "Frontend Skills - React Workshop",
+          description:
+            "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.",
+          host: "Emily Rodriguez",
+          time: "9:00 AM - 11:00 AM",
+        },
+        {
+          title: "Djano Workshop",
+          description:
+            "Mauris ipsum nulla, malesuada ut, efficitur eu, tempor et, tellus. Nulla facilisi. Morbi imperdiet, mauris ac auctor dictum.",
+          host: "Dr. Alex Thompson",
+          time: "3:00 PM - 5:00 PM",
+        },
+      ];
+
   return (
-    <div className="min-h-screen bg-[#F4E3C1]">
-      <Navbar />
-      <div className="flex justify-center items-center mt-12 mb-12">
+    <div className="bg-[#F4E3C1]">
+        <Title user="" text="Schedule" />
+      <div className="flex justify-center items-center mt-12 mb-16">
         <iframe
           src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&mode=AGENDA&src=Y181NmQwZjdkYjJiMGZmYzlmMzU1NzRiMjkzODNkMzBjYzc3NjhkZGE5NTI1M2Q5ZGVlNzZkNWI2OTI5YmIwNzZlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23f09300"
           className="border border-[#777] rounded-lg bg-[#F4E3C1] shadow-lg"
-          width="500"
-          height="600"
+          width="80%"
+          height="500px"
           frameBorder="0"
           scrolling="no"
         ></iframe>
       </div>
-      <Footer />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5">
+            {workshops.map((workshop, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              >
+                <h2 className="font-a font-semibold text-[#3B5435] mb-3">
+                  {workshop.title}
+                </h2>
+                <p className="font-roman text-gray-700 mb-4 leading-relaxed">
+                  {workshop.description}
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <span className="font-medium text-[#3B5435] mr-2 font-a">
+                      Host:
+                    </span>
+                    <span className="text-gray-800 font-a">{workshop.host}</span>
+                  </div>
+
+                  <div className="flex items-center">
+                    <span className="font-medium text-[#3B5435] mr-2 font-a">
+                      Time:
+                    </span>
+                    <span className="text-gray-800 font-a">{workshop.time}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
     </div>
   );
 }

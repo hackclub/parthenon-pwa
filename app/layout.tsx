@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { EB_Garamond, Ubuntu } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
-  subsets: ["latin"],
   variable: "--font-eb-garamond",
   weight: ["400", "700"],
+  subsets: ['latin'], 
+  display: 'swap',
 });
 
 const inter = Ubuntu({
@@ -17,24 +17,49 @@ const inter = Ubuntu({
 });
 
 const windsol = localFont({
-  src: "./Windsol-Regular.ttf",
+  src: "./fonts/Windsol-Regular.ttf",
   variable: "--font-windsol",
   weight: "400",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const augustus = localFont({
+  src: "./fonts/AUGUSTUS.ttf",
+  variable: "--font-augustus",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const greek = localFont({
+  src: "./fonts/Greek-Freak.ttf",
+  variable: "--font-greek",
+  weight: "400",
+});
+
+const romanica = localFont({
+  src: "./fonts/Romanica.ttf",
+  variable: "--font-romanica",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Parthenon Portal",
-  description: "Welcome to Parthenon",
+  title: "Parthenon",
+  description:
+    "The world's largest hackathon for high school aged girls and nonbinary teens",
+  openGraph: {
+    title: "Parthenon",
+    description:
+      "The world's largest hackathon for high school aged girls and nonbinary teens",
+    url: "https://parthenon-seven.vercel.app/",
+    siteName: "Parthenon",
+    images: [
+      {
+        url: "https://parthenon-seven.vercel.app/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Parthenon Hackathon",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -45,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${windsol.className} ${ebGaramond.variable} ${inter.variable} font-bold antialiased bg-[#3B5435]`}
+        className={`${windsol.variable} ${ebGaramond.variable} ${inter.variable} ${augustus.variable} ${greek.variable} ${romanica.variable} font-bold antialiased bg-[#3B5435]`}
       >
         {children}
       </body>

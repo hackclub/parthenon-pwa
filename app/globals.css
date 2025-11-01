@@ -1,9 +1,165 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
 @theme inline {
   --font-handwritten: var(--font-windsol);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-eb-garamond);
+
+  --font-a: var(--font-augustus);
+  --font-greek: var(--font-greek);
+  --font-roman: var(--font-romanica);
+}
+
+/* resposive font sizes */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .fixed-scrollable {
+    position: relative;       
+    height: 100vh;   
+    overflow-y: auto; 
+  }
+  .nav-fixed {
+    position: relative;       
+    height: 100vh;   
+    overflow-y: auto; 
+  }
+  .this_header {
+    position: relative; 
+    width: 100%;
+    top: 0;          
+    left: 0;        
+    height: 8vh;
+  }
+  .nav-text {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 20px;
+  }
+    .fixed-scrollable {
+      position: fixed; 
+      top: 8vh;          
+      right: 0;        
+      height: 92vh;   
+      overflow-y: auto; 
+      overflow-x: hidden;
+    }
+    .nav-fixed {
+      position: fixed; 
+      left: 0;      
+      top: 8vh;           
+      height: 92vh;   
+      overflow-y: auto; 
+    }
+    .this_header {
+      position: fixed; 
+      width: 100vw;
+      top: 0vh;          
+      left: 0;        
+      height: 8vh;
+    }
+    .nav-text {
+      font-size: 2.2vw;
+    }
+}
+
+.text-outline {
+  text-shadow: 2px 2px 0 #28372E, 2px -2px 0 #28372E, -2px 2px 0 #28372E, -2px -2px 0 #28372E, 2px 0px 0 #28372E, 0px 2px 0 #28372E, -2px 0px 0 #28372E, 0px -2px 0 #28372E;
+}
+
+.bg-portal {
+  background-color: #F4E3C1;
+  text-align: center;
+}
+.bg-nav {
+  background-color: #445C3C;
+}
+
+.bg-nav-btn {
+  background-color: #536745;
+}
+
+.bg-nav-btn-actv {
+  background-color: #697c5c;
+}
+
+.bg-leaderboard {
+  background-color: #F4E3C1;
+  text-align: center;
+}
+
+.spacer {
+  flex-grow: 1;
+  margin: auto;
+}
+
+.line {
+  border: none; 
+  border-top: 3px solid rgb(17, 66, 14); 
+  margin: 20px 0;
+}
+
+.nav-color {
+  color: #DBC491;
+}
+
+.box-shadow {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.glowing-pulse-box {
+  animation: pulse-glow 2s infinite; /* Apply the animation */
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 237, 34, 0.5); /* Subtle initial glow */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 237, 34, 1); /* Brighter, larger glow */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 237, 34, 0.5); /* Returns to initial state */
+  }
+}
+
+.disabled {
+  color: #5f6763;
+  background-color: #929a95;
+}
+
+.disabled img {
+  filter: grayscale(100%);
+}
+
+.badge-hover:hover {
+  box-shadow: 0 0 15px rgb(255, 178, 12); /* Returns to initial state */
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 :root {
@@ -56,4 +212,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.slackbtn {
+  align-items:center;color:#000;background-color:#fff;border:1px solid #ddd;border-radius:4px;display:inline-flex;font-family:Lato, sans-serif;font-size:16px;font-weight:600;height:48px;justify-content:center;text-decoration:none;width:256px;
+}
+
+.slacksvg {
+  height:20px;width:20px;margin-right:12px;
 }
