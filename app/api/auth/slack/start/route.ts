@@ -8,8 +8,6 @@ dotenv.config();
 export async function GET(req: Request) {
   const clientId = process.env.SLACK_CLIENT_ID!
   const redirectUri = process.env.SLACK_REDIRECT_URI!
-  console.log(clientId)
-  console.log(redirectUri)
 
   const state = crypto.randomBytes(16).toString('hex')
   const nonce = crypto.randomBytes(16).toString('hex')

@@ -2,8 +2,6 @@ var Airtable = require('airtable');
 const dotenv = require('dotenv');
 dotenv.config();
 
-console.log(process.env.AIRTABLE_API_KEY)
-
 var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('appjvns14juc7Z2Vc');
 
 export async function getListAndPoints() {
@@ -45,7 +43,6 @@ export async function getInfoFromID(id) {
         function page(records, fetchNextPage) {
             records.forEach(function(record) {
                 my_record = record.get('Name')
-                console.log("name=", my_record)
             });
             fetchNextPage();
         },
@@ -53,7 +50,6 @@ export async function getInfoFromID(id) {
             if (err) {
                 reject(err);
             } else {
-                console.log("returning", my_record)
                 resolve(my_record);
             }
         }
@@ -79,7 +75,6 @@ export async function getBadgesFromID(id) {
             if (err) {
                 reject(err);
             } else {
-                console.log("returning", my_badges)
                 resolve(my_badges);
             }
         }
@@ -98,7 +93,6 @@ export async function getGoddessFromID(id) {
         function page(records, fetchNextPage) {
             records.forEach(function(record) {
                 my_record = record.get('Goddess')
-                console.log("name=", my_record)
             });
             fetchNextPage();
         },
@@ -106,7 +100,6 @@ export async function getGoddessFromID(id) {
             if (err) {
                 reject(err);
             } else {
-                console.log("returning", my_record)
                 resolve(my_record);
             }
         }
