@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: "https://parthenon-seven.vercel.app/logo.png",
         width: 1200,
         height: 630,
-        alt: "Parthenon Hackathon",
+        alt: "Parthenon Hackathon ",
       },
     ],
     type: "website",
