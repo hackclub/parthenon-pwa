@@ -41,8 +41,8 @@ var classes = "border rounded-lg p-4 bg-[#DBC491]"
         height={1500}
         className="h-[25vw] w-auto m-auto"
       />
-      <h1 className="font-a my-5">Welcome to NYC, {this_user}!</h1>
-      <h1 className="font-a my-5">Your patron goddess is...</h1>
+      <h1 className="font-[Augustus] my-5">Welcome to NYC, {this_user}!</h1>
+      <h1 className="font-[Augustus] my-5">Your patron goddess is...</h1>
       <div className={classes} style={customStyles}>
         <Image 
         src="/nycskyline.png"
@@ -51,8 +51,8 @@ var classes = "border rounded-lg p-4 bg-[#DBC491]"
         height={1500}
         className="w-1/3 m-auto"
         />
-        <h1 className="font-a">{this_goddess.name}</h1>
-        <p className="font-roman">{this_goddess.desc}</p>
+        <h1 className="font-[Augustus]">{this_goddess.name}</h1>
+        <p className="font-[Romanica]">{this_goddess.desc}</p>
       </div>
       <div className="h-[30px]">
 

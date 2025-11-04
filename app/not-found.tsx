@@ -36,11 +36,11 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
       <div className="min-h-screen bg-[#F4E3C1] flex flex-col">
       <div className="flex-1 flex flex-col items-center justify-center px-4">
         <div className="text-center">
-          <h1 className="text-9xl font-bold text-black mb-4 font-handwritten">
+          <h1 className="text-9xl font-bold text-black mb-4 font-[Windsol]">
             404
           </h1>
-          <h2 className="text-4xl font-bold text-black mb-6 font-roman">Page Not Found</h2>
-          <p className="text-xl text-black mb-8 max-w-md font-handwritten">
+          <h2 className="text-4xl font-bold text-black mb-6 font-[Romanica]">Page Not Found</h2>
+          <p className="text-xl text-black mb-8 max-w-md font-[Windsol]">
             Oops! The page you're looking for seems to have wandered off into
             the ancient ruins.
           </p>
@@ -48,7 +48,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
           <div className="space-y-4">
             <Link
               href="/"
-              className="inline-block px-8 py-3 bg-[#3B5435] text-white font-bold rounded-lg hover:bg-[#2a3e26] transition-colors duration-200 font-greek"
+              className="inline-block px-8 py-3 bg-[#3B5435] text-white font-bold rounded-lg hover:bg-[#2a3e26] transition-colors duration-200 font-[Greek]"
             >
               Return to Login
             </Link>
@@ -56,7 +56,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
             <div className="block">
               <Link
                 href="/portal"
-                className="inline-block px-8 py-3 border-2 border-[#3B5435] text-[#3B5435] font-bold rounded-lg hover:bg-[#3B5435] hover:text-white transition-colors duration-200 font-greek"
+                className="inline-block px-8 py-3 border-2 border-[#3B5435] text-[#3B5435] font-bold rounded-lg hover:bg-[#3B5435] hover:text-white transition-colors duration-200 font-[Greek]"
               >
                 Go to Portal
               </Link>

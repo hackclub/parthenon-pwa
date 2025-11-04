@@ -2,14 +2,32 @@
 
 @import "tailwindcss";
 
-@theme inline {
-  --font-handwritten: var(--font-windsol);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-eb-garamond);
+@font-face {
+  font-family: 'Windsol';
+  src: url('/fonts/Windsol-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
-  --font-a: var(--font-augustus);
-  --font-greek: var(--font-greek);
-  --font-roman: var(--font-romanica);
+@font-face {
+  font-family: 'Augustus';
+  src: url('/fonts/AUGUSTUS.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Greek';
+  src: url('/fonts/Greek-Freak.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Romanica';
+  src: url('/fonts/Romanica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* resposive font sizes */

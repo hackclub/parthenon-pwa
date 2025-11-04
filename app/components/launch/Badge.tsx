@@ -30,9 +30,9 @@ export default function Badge({ object, earned } : BadgeProps) {
     var inner = <div className="w-full flex justify-center h-full">
         <div className="w-4/5 margin-auto flex justify-center flex align-center h-full">
         <div className="grid w-1/2 h-full content-center">
-        <h2 className="font-roman">{object.name}</h2>
-        <p className="font-roman">{object.desc}</p>
-        <p className="font-a">{String(object.points)} points</p>
+        <h2 className="font-[Romanica]">{object.name}</h2>
+        <p className="font-[Romanica]">{object.desc}</p>
+        <p className="font-[Augustus]">{String(object.points)} points</p>
         </div>
         <div className="grid w-1/2 content-center">
             <Image 
