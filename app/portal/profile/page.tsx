@@ -4,7 +4,7 @@ import Image from "next/image";
 import { BadgeFromID, getBadgesFromID, getInfoFromID } from "@/app/airtable";
 import { cookies } from 'next/headers'
 import { redirect } from "next/navigation";
-import { getBadgeCatalog, getUserEarnedBadgeIDs } from "@/app/api/badges/store/route";
+import { getBadgeCatalog, getUserEarnedBadgeIDs } from "@/app/api/badges/store/catalog";
 
 export default async function Home() {
   const c = await cookies()

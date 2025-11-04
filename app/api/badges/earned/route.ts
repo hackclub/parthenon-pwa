@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { getUserEarnedBadgeIDs } from '@/app/api/badges/store/route'
+import { getUserEarnedBadgeIDs } from '@/app/api/badges/store/catalog'
 
-export async function GET() {
+export async function GET(request: Request) {
   const c = await cookies()
   const userId = c.get('user_id')?.value
   if (!userId) return NextResponse.json({ badges: [] }, { status: 401 })
