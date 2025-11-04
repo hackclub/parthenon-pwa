@@ -60,25 +60,25 @@ export default async function Schedule() {
                 key={index}
                 className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
               >
-                <h2 className="font-a font-semibold text-[#3B5435] mb-3">
+                <h2 className="font-[Augustus] font-semibold text-[#3B5435] mb-3">
                   {workshop.title}
                 </h2>
-                <p className="font-roman text-gray-700 mb-4 leading-relaxed">
+                <p className="font-[Romanica] text-gray-700 mb-4 leading-relaxed">
                   {workshop.description}
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center">
-                    <span className="font-medium text-[#3B5435] mr-2 font-a">
+                    <span className="font-medium text-[#3B5435] mr-2 font-[Augustus]">
                       Host:
                     </span>
-                    <span className="text-gray-800 font-a">{workshop.host}</span>
+                    <span className="text-gray-800 font-[Augustus]">{workshop.host}</span>
                   </div>
 
                   <div className="flex items-center">
-                    <span className="font-medium text-[#3B5435] mr-2 font-a">
+                    <span className="font-medium text-[#3B5435] mr-2 font-[Augustus]">
                       Time:
                     </span>
-                    <span className="text-gray-800 font-a">{workshop.time}</span>
+                    <span className="text-gray-800 font-[Augustus]">{workshop.time}</span>
                   </div>
                 </div>
               </div>

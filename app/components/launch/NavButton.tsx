@@ -35,4 +35,12 @@ export default function NavButton({ name, href, onClick }: NavButtonProps) {
       </Link>
     </div>
   );
+    return <div className={newClasses}>
+    <Link
+    href={href}
+    onClick={onClick}
+    ><span className='text-center font-[Augustus] nav-color'><h2 className='nav-text'>{name}</h2></span></Link>
+    </div>;
 }
+
+

@@ -21,7 +21,7 @@ export default function LeaderboardSlot({ object, points, isGlowing } : SlotProp
     }
 
     return <div className={classes} style={customStyles}>
-        <h2 className="font-a text-black">{object.name}</h2>
-        <h2 className="font-greek text-black">{points}</h2>
+        <h2 className="font-[Augustus] text-black">{object.name}</h2>
+        <h2 className="font-[Greek text-black]">{points}</h2>
     </div>
 }
