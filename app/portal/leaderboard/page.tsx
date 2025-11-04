@@ -27,7 +27,7 @@ export default async function Home() {
   
   //TODO: get "ranking list" with numbers
     return (
-      <div className="w-full">
+      <div className="w-full text-black">
           <Title user={this_user} text="Leaderboard" />
           <div className="p-4 mx-auto w-full">
           <div className="w-full p-4 bg-[#DBC491] rounded-lg">

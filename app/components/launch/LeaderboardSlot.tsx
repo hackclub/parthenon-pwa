@@ -14,14 +14,14 @@ export default function LeaderboardSlot({ object, points, isGlowing } : SlotProp
         border: `6px solid ${object.color}`,
       };
 
-    var classes = "border bg-leaderboard rounded-lg flex justify-between p-4"
+    var classes = "border bg-leaderboard rounded-lg flex justify-between p-4 text-black"
 
     if (isGlowing=="true") {
         classes += " glowing-pulse-box"
     }
 
     return <div className={classes} style={customStyles}>
-        <h2 className="font-a">{object.name}</h2>
-        <h2 className="font-greek">{points}</h2>
+        <h2 className="font-a text-black">{object.name}</h2>
+        <h2 className="font-greek text-black">{points}</h2>
     </div>
 }

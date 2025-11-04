@@ -32,7 +32,7 @@ export default async function Page() {
 var classes = "border rounded-lg p-4 bg-[#DBC491]"
 
   return (
-    <div className="w-full">
+    <div className="w-full text-black">
       <Title user={this_user} text="Welcome to Parthenon, [name]!" />
       <Image
         src="/nycskyline.png"

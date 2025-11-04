@@ -21,28 +21,28 @@ export default async function Schedule() {
         {
           title: "Learn some Game Dev in Godot",
           description:
-            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus.",
-          host: "Estella",
+            "Learn how to make your own 2d platformer in Godot!",
+          host: "Tongyu",
           time: "11 am",
         },
         {
           title: "Frontend Skills - React Workshop",
           description:
-            "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.",
-          host: "Emily Rodriguez",
-          time: "9:00 AM - 11:00 AM",
+            "Learn the fundamentals of React and how to build dynamic UI's!",
+          host: "Celeste",
+          time: "6 PM - 7 PM",
         },
         {
-          title: "Djano Workshop",
+          title: "Backend Skills - Next.js Workshop",
           description:
             "Mauris ipsum nulla, malesuada ut, efficitur eu, tempor et, tellus. Nulla facilisi. Morbi imperdiet, mauris ac auctor dictum.",
-          host: "Dr. Alex Thompson",
-          time: "3:00 PM - 5:00 PM",
+          host: "Celeste",
+          time: "8 - 9 PM",
         },
       ];
 
   return (
-    <div className="bg-[#F4E3C1]">
+    <div className="bg-[#F4E3C1] text-black">
         <Title user="" text="Schedule" />
       <div className="flex justify-center items-center mt-12 mb-16">
         <iframe

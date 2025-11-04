@@ -32,7 +32,7 @@ export default async function PortalLayout({ children }: { children: React.React
   return (
     <div className="min-h-screen w-full bg-portal">
       {/* Mobile top bar (md:hidden) */}
-      <header className="md:hidden sticky top-0 z-40 bg-[#3B5435] text-white">
+      <header className="md:hidden sticky top-0 z-40 bg-[#3B5435] text-black">
         <div className="flex items-center justify-between">
           <div className='w-1/2 bg-red-100'>
               <Header />

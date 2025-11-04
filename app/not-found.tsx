@@ -19,7 +19,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
   return (
     <div className="min-h-screen w-full bg-portal flex flex-col">
       {/* Mobile top bar */}
-      <header className="md:hidden sticky top-0 z-40 bg-[#3B5435] text-white">
+      <header className="md:hidden sticky top-0 z-40 bg-[#3B5435] text-black">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="w-1/2">
             <Header />
@@ -48,7 +48,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
           <div className="space-y-4">
             <Link
               href="/"
-              className="inline-block px-8 py-3 bg-[#3B5435] text-white font-bold rounded-lg hover:bg-[#2a3e26] transition-colors duration-200 font-greek"
+              className="inline-block px-8 py-3 bg-[#3B5435] text-black font-bold rounded-lg hover:bg-[#2a3e26] transition-colors duration-200 font-greek"
             >
               Return to Login
             </Link>

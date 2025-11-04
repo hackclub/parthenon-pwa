@@ -26,10 +26,10 @@ export default async function Home() {
     // }
 
   return (
-    <div className="w-full">
+    <div className="w-full text-black">
         <Title user={this_user} text="[name]'s Profile" subtitle="Patron of Bellona, Goddess of War"/>
         <div className="p-4 mx-auto w-full">
-        <div className="w-full p-4 bg-nav rounded-lg">
+        <div className="w-full p-4 bg-[#DBC491] rounded-lg">
         <div className="grid gap-3 grid-cols-3">
     {catalog.map(b => (
       <Badge key={b.id} object={b} earned={String(earnedSet.has(b.id))} />
