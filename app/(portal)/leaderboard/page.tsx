@@ -30,7 +30,6 @@ export default async function Home() {
     }
   }
   
-  //TODO: get "ranking list" with numbers
     return (
       <div className="w-full text-black">
           <Title user={this_user} text="Leaderboard" />

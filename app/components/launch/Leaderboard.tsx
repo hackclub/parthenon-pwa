@@ -15,7 +15,7 @@ export default async function Leaderboard({ this_goddess }: LeaderboardProps) {
 
     var elements = []
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < GoddessList.length; i++) {
       if (GoddessList[Number(list[i])-1]==this_goddess) {
         elements.push(<LeaderboardSlot isGlowing="true" object={GoddessList[Number(list[i])-1]} points={respectivepoints[i]}/>);
       } else {

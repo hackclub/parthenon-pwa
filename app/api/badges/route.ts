@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import Airtable from 'airtable'
 import { redirect } from 'next/navigation'
+import { getGoddessFromID } from '@/app/airtable'
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appjvns14juc7Z2Vc')
 
@@ -60,6 +61,44 @@ export async function POST(req: Request) {
         },
       },
     ])
+
+    //NOW update the goddess points
+    const goddess_name = await getGoddessFromID(USER_ID)
+    console.log(goddess_name)
+    const goddess_record = await base('Goddess Points')
+    .select({
+      view: 'Grid view',
+      filterByFormula: `{Name} = "${goddess_name}"`,
+      maxRecords: 1,
+    })
+    .firstPage()
+
+    const old_points = Number(goddess_record[0].get("Points"))
+
+    //GET POINTS FROM BADGE THING
+
+    const badge_record = await base('Badges')
+    .select({
+      view: 'Grid view',
+      filterByFormula: `{ID} = "${badgeParam}"`,
+      maxRecords: 1,
+    })
+    .firstPage()
+
+    const new_points = old_points + Number(badge_record[0].get("points"))
+
+    const updated_points = await base('Goddess Points').update([
+      {
+        id: goddess_record[0].id,
+        fields: {
+          Points: new_points,
+        },
+      },
+    ])
+
+    //NOW have the slack bot do smth
+
+    //FINALLY redirect
 
     redirect('/')
   }
