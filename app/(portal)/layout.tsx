@@ -25,7 +25,7 @@ export default async function PortalLayout({ children }: { children: React.React
       <NavButton name="Leaderboard" href="/leaderboard" onClick={onClick} />
       <NavButton name="Schedule" href="/schedule" onClick={onClick} />
       <div className="spacer hidden md:inline" />
-      <NavButton name="Sign out" href="/api/auth/slack/end"/>
+      <NavButton name="Sign out" href="/logout" onClick={onClick}/>
     </div>
   )
 

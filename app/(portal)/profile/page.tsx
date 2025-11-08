@@ -14,7 +14,7 @@ export default async function Home() {
   
   if (!USER_ID) {
       redirect('/login')
-    }
+  }
 
   //put in place b4 unveiling!!
   if (USER_ID!="U06TV3F4HEU") {

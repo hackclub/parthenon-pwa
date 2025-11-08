@@ -61,8 +61,8 @@ export async function GET(req: Request) {
   // const teamId = payload['https://slack.com/team_id'] as string | undefined
 
   // Clear transient cookies
-  c.set('slack_oauth_state', '', { path: '/', maxAge: 0 })
-  c.set('slack_oidc_nonce', '', { path: '/', maxAge: 0 })
+  c.set('slack_oauth_state', '', { path: '/', maxAge: 0, secure: process.env.NODE_ENV === 'production' })
+  c.set('slack_oidc_nonce', '', { path: '/', maxAge: 0, secure: process.env.NODE_ENV === 'production' })
 
   // Set your app cookie with the Slack user id
   c.set('user_id', slackUserId, {
