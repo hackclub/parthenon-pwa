@@ -49,7 +49,6 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
             <Link
               href="/"
               className="inline-block px-8 py-3 bg-[#3B5435] text-white font-bold rounded-lg hover:bg-[#2a3e26] transition-colors duration-200 font-[Greek]"
-              className="inline-block px-8 py-3 bg-[#3B5435] text-black font-bold rounded-lg hover:bg-[#2a3e26] transition-colors duration-200 font-greek"
             >
               Return to Login
             </Link>

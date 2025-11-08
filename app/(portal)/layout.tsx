@@ -20,10 +20,10 @@ export default async function PortalLayout({ children }: { children: React.React
 
   const NavItems = ({ onClick }: { onClick?: () => any }) => (
     <div className="flex flex-col gap-4 h-full py-5">
-      <NavButton name="Welcome" href="/portal" onClick={onClick} />
-      <NavButton name="Profile" href="/portal/profile" onClick={onClick} />
-      <NavButton name="Leaderboard" href="/portal/leaderboard" onClick={onClick} />
-      <NavButton name="Schedule" href="/portal/schedule" onClick={onClick} />
+      <NavButton name="Welcome" href="/" onClick={onClick} />
+      <NavButton name="Profile" href="/profile" onClick={onClick} />
+      <NavButton name="Leaderboard" href="/leaderboard" onClick={onClick} />
+      <NavButton name="Schedule" href="/schedule" onClick={onClick} />
       <div className="spacer hidden md:inline" />
       <NavButton name="Sign out" href="/api/auth/slack/end"/>
     </div>

@@ -13,8 +13,13 @@ export default async function Home() {
   const this_user = await getInfoFromID(USER_ID)
   
   if (!USER_ID) {
-      redirect('/api/auth/slack/start')
+      redirect('/login')
     }
+
+  //put in place b4 unveiling!!
+  if (USER_ID!="U06TV3F4HEU") {
+    redirect('/countdown')
+  }
 
     const [catalog, earnedIds] = await Promise.all([
       getBadgeCatalog(),                 // cached (10 min)

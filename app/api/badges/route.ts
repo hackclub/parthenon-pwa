@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   const USER_ID = c.get('user_id')?.value
   
     if (!USER_ID) {
-        redirect('/api/auth/slack/start')
+        redirect('/login')
     }
 
     const { searchParams } = new URL(req.url)
@@ -61,5 +61,5 @@ export async function POST(req: Request) {
       },
     ])
 
-    redirect('/portal')
+    redirect('/')
   }

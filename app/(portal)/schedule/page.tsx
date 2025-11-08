@@ -7,8 +7,13 @@ export default async function Schedule() {
       const USER_ID = c.get('user_id')?.value
       
       if (!USER_ID) {
-          redirect('/api/auth/slack/start')
+          redirect('/login')
         }
+
+      //put in place b4 unveiling!!
+  if (USER_ID!="U06TV3F4HEU") {
+    redirect('/countdown')
+  }
 
     const workshops = [
         {

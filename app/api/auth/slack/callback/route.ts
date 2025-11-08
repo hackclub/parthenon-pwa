@@ -74,6 +74,6 @@ export async function GET(req: Request) {
   })
 
   // Redirect user into your app
-  const to = process.env.NEXT_PUBLIC_APP_URL! + '/portal'
+  const to = process.env.NEXT_PUBLIC_APP_URL!
   return NextResponse.redirect(to)
 }
