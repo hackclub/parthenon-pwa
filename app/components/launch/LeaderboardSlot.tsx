@@ -5,7 +5,7 @@ import { AnchorHTMLAttributes } from "react";
 
 interface SlotProps {
     object: Goddess,
-    points: string
+    points: string,
     isGlowing: string
   }
 

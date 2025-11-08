@@ -2,9 +2,43 @@ import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import Airtable from 'airtable'
 import { redirect } from 'next/navigation'
-import { getGoddessFromID } from '@/app/airtable'
+import { getGoddessFromID, getInfoFromID } from '@/app/airtable'
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appjvns14juc7Z2Vc')
+
+// slackBot.js
+import { WebClient } from '@slack/web-api';
+
+// Put your bot token (xoxb-...) in an environment variable
+// e.g. SLACK_BOT_TOKEN="xoxb-123..." node index.js
+const slackToken = process.env.SLACK_BOT_TOKEN;
+
+if (!slackToken) {
+  throw new Error('Missing SLACK_BOT_TOKEN env variable');
+}
+
+// Create a Slack Web API client
+const slackClient = new WebClient(slackToken);
+
+/**
+ * Send a message to a Slack channel.
+ *
+ * @param {string} channel - The channel ID or name (e.g. "C0123456789" or "#general")
+ * @param {string} text - The message text
+ * @returns {Promise<void>}
+ */
+
+export async function sendSlackMessage(channel: string, text: string) {
+  try {
+    await slackClient.chat.postMessage({
+      channel,
+      text,
+    });
+    console.log(`Message sent to ${channel}: ${text}`);
+  } catch (error) {
+    console.error('Error sending Slack message:', error);
+  }
+}
 
 export async function GET(req: Request) {
   // optionally: guard with a simple Referer/origin check
@@ -97,6 +131,8 @@ export async function POST(req: Request) {
     ])
 
     //NOW have the slack bot do smth
+    const username = await getInfoFromID(USER_ID)
+    await sendSlackMessage("C09S3D8PR6V", `${username} just earned ${badge_record[0].get("name")}, earning ${goddess_name} ${badge_record[0].get("points")} points! Hoorah!`);
 
     //FINALLY redirect
 
