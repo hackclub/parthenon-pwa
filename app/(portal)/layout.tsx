@@ -6,7 +6,7 @@ import NavButton from '@/app/components/launch/NavButton'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-export default async function PortalLayout({ children }: { children: React.ReactNode }) {
+export default function PortalLayout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
 
   // Close the menu on route changes or window resize to md+
