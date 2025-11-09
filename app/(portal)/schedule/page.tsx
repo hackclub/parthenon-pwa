@@ -1,19 +1,16 @@
+import { getInfoFromID } from "@/app/airtable";
+import { doChecks } from "@/app/checks";
 import Title from "@/app/components/launch/Title";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function Schedule() {
     const c = await cookies()
-      const USER_ID = c.get('user_id')?.value
-      
-      if (!USER_ID) {
-          redirect('/login')
-        }
+    const USER_ID = c.get('user_id')?.value
 
-      //put in place b4 unveiling!!
-  if (USER_ID!="U06TV3F4HEU") {
-    redirect('/countdown')
-  }
+  await doChecks(USER_ID)
+
+  const this_user = await getInfoFromID(USER_ID)
 
     const workshops = [
         {

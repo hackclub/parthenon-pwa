@@ -4,22 +4,16 @@ import Title from '@/app/components/launch/Title'
 import { cookies } from "next/headers";
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
+import { doChecks } from '@/app/checks'
 
 export default async function Page() {
 
   const c = await cookies()
   const USER_ID = c.get('user_id')?.value
-
-  if (!USER_ID) {
-    redirect('/login')
-  }
-
-  //put in place b4 unveiling!!
-  if (USER_ID!="U06TV3F4HEU") {
-    redirect('/countdown')
-  }
-
   const this_user = await getInfoFromID(USER_ID)
+
+  await doChecks(USER_ID)
+
   const goddess_name = await getGoddessFromID(USER_ID)
   var this_goddess = new Goddess("", "", "", "");
 

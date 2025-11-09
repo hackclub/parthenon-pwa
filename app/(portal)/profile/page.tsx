@@ -5,21 +5,21 @@ import { BadgeFromID, getBadgesFromID, getInfoFromID } from "@/app/airtable";
 import { cookies } from 'next/headers'
 import { redirect } from "next/navigation";
 import { getBadgeCatalog, getUserEarnedBadgeIDs } from "@/app/api/badges/store/catalog";
+import { doChecks } from "@/app/checks";
 
 export default async function Home() {
   const c = await cookies()
   const USER_ID = c.get('user_id')?.value
 
-  const this_user = await getInfoFromID(USER_ID)
-  
+  //this is put in here bc we use UserID in getEarnedUserBadges...
   if (!USER_ID) {
-      redirect('/login')
+    redirect("/login"); // redirect() is typed as `never`, so TS knows we don't continue
   }
 
-  //put in place b4 unveiling!!
-  if (USER_ID!="U06TV3F4HEU") {
-    redirect('/countdown')
-  }
+  
+  await doChecks(USER_ID)
+
+  const this_user = await getInfoFromID(USER_ID)
 
     const [catalog, earnedIds] = await Promise.all([
       getBadgeCatalog(),                 // cached (10 min)

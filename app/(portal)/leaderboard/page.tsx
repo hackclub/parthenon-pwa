@@ -5,21 +5,16 @@ import { getGoddessFromID, getInfoFromID } from "@/app/airtable";
 import Goddess, { GoddessList } from "@/app/components/launch/GoddessInfo";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { doChecks } from "@/app/checks";
 
 export default async function Home() {
   const c = await cookies()
   const USER_ID = c.get('user_id')?.value
 
-  if (!USER_ID) {
-      redirect('/login')
-    }
-
-  //put in place b4 unveiling!!
-  if (USER_ID!="U06TV3F4HEU") {
-    redirect('/countdown')
-  }
+  await doChecks(USER_ID)
 
   const this_user = await getInfoFromID(USER_ID)
+
   const goddess_name = await getGoddessFromID(USER_ID)
   var this_goddess = new Goddess("default", "", "")
 
@@ -29,7 +24,7 @@ export default async function Home() {
       break;
     }
   }
-  
+
     return (
       <div className="w-full text-black">
           <Title user={this_user} text="Leaderboard" />
