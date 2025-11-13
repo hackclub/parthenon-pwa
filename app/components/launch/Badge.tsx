@@ -28,13 +28,13 @@ export default function Badge({ object, earned } : BadgeProps) {
     console.log(object.src)
 
     var inner = <div className="w-full flex justify-center h-full">
-        <div className="w-4/5 margin-auto flex justify-center flex align-center h-full">
-        <div className="grid w-1/2 h-full content-center">
-        <h2 className="font-[Romanica]">{object.name}</h2>
-        <p className="font-[Romanica]">{object.desc}</p>
-        <p className="font-[Augustus]">{String(object.points)} points</p>
+        <div className="w-4/5 margin-auto flex flex-col lg:flex-row lg:justify-center align-center h-full">
+        <div className="lg:grid lg:w-1/2 h-full content-center">
+            <h2 className="font-[Augustus] resize_font_bg">{object.name}</h2>
+            <p className="font-[Romanica] resize_font_sm">{object.desc}</p>
+            <p className="font-[Augustus]">{String(object.points)} points</p>
         </div>
-        <div className="grid w-1/2 content-center">
+        <div className="lg:grid lg:w-1/2 content-center">
             <Image 
             src={object.src}
             alt=""

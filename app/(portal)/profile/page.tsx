@@ -30,7 +30,7 @@ export default async function Home() {
     //   console.log(String(earnedSet.has(catalog[i].id)))
     // }
 
-    const goddess = getGoddessFromID(USER_ID)
+    const goddess = await getGoddessFromID(USER_ID)
     const goddess_msg = `Patron of ${goddess}`
 
   return (

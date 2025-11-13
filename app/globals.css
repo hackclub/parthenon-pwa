@@ -248,3 +248,11 @@ body {
   object-fit: cover;
   padding: 30px;
 }
+
+.resize_font_sm {
+  font-size: 70%;
+}
+
+.resize_font_bg {
+  font-size: 80%;
+}
