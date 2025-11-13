@@ -1,7 +1,7 @@
 import 'server-only'
 import Airtable from 'airtable'
 
-const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY! }).base('appjvns14juc7Z2Vc')
+const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY! }).base('appfpPZsw1cEUkzQ7')
 
 //ooh this is important
 type Badge = { id: string; name: string; desc: string; points: number; src: string; color: string}

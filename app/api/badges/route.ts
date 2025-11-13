@@ -6,7 +6,7 @@ import { getGoddessFromID, getInfoFromID } from '@/app/airtable'
 import { sendSlackMessage } from './bot/bot'
 import { doChecks } from '@/app/checks'
 
-const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appjvns14juc7Z2Vc')
+const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appfpPZsw1cEUkzQ7')
 
 export async function GET(req: Request) {
   // optionally: guard with a simple Referer/origin check

@@ -2,7 +2,7 @@ var Airtable = require('airtable');
 const dotenv = require('dotenv');
 dotenv.config();
 
-var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('appjvns14juc7Z2Vc');
+var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('appfpPZsw1cEUkzQ7');
 
 export async function getListAndPoints() {
     const rank_list = [];
