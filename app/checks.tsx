@@ -9,7 +9,7 @@ export async function doChecks(USER_ID: any) {
       }
     
       //put in place b4 unveiling!!
-      if (USER_ID!="U06TV3F4HEUf") {
+      if (USER_ID!="U06TV3F4HEU") {
         redirect('/countdown')
       }
     
