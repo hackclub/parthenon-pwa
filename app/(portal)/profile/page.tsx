@@ -1,7 +1,7 @@
 import Title from "@/app/components/launch/Title";
 import Badge from "@/app/components/launch/Badge";
 import Image from "next/image";
-import { BadgeFromID, getBadgesFromID, getInfoFromID } from "@/app/airtable";
+import { BadgeFromID, getBadgesFromID, getGoddessFromID, getInfoFromID } from "@/app/airtable";
 import { cookies } from 'next/headers'
 import { redirect } from "next/navigation";
 import { getBadgeCatalog, getUserEarnedBadgeIDs } from "@/app/api/badges/store/catalog";
@@ -30,9 +30,12 @@ export default async function Home() {
     //   console.log(String(earnedSet.has(catalog[i].id)))
     // }
 
+    const goddess = getGoddessFromID(USER_ID)
+    const goddess_msg = `Patron of ${goddess}`
+
   return (
     <div className="w-full text-black">
-        <Title user={this_user} text="[name]'s Profile" subtitle="Patron of Bellona, Goddess of War"/>
+        <Title user={this_user} text="[name]'s Profile" subtitle={goddess_msg}/>
         <div className="p-4 mx-auto w-full">
         <div className="w-full p-4 bg-[#DBC491] rounded-lg">
         <div className="grid gap-3 grid-cols-3">
