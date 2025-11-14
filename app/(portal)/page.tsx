@@ -31,7 +31,7 @@ export default async function Page() {
 var classes = "border rounded-lg p-4 bg-[#DBC491]"
 
   return (
-    <div className="w-full text-black max-w-screen">
+    <div className="w-full text-black max-w-screen overflow-x-hidden">
       <Title user={this_user} text="Welcome to Parthenon, [name]!" />
       <Image
         src="/nycskyline.png"

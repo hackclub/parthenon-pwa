@@ -26,7 +26,7 @@ export default async function Home() {
   }
 
     return (
-      <div className="w-full text-black max-w-screen">
+      <div className="w-full text-black max-w-screen overflow-x-hidden">
           <Title user={this_user} text="Leaderboard" />
           <div className="p-4 mx-auto w-full">
           <div className="w-full p-4 bg-[#DBC491] rounded-lg">

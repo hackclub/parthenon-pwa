@@ -44,7 +44,7 @@ export default async function Schedule() {
       ];
 
   return (
-    <div className="bg-[#F4E3C1] text-black max-w-screen">
+    <div className="bg-[#F4E3C1] text-black max-w-screen overflow-x-hidden">
         <Title user="" text="Schedule" />
       <div className="flex justify-center items-center mt-12 mb-16">
         <iframe
