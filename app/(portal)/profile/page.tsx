@@ -34,9 +34,9 @@ export default async function Home() {
     const goddess_msg = `Patron of ${goddess}`
 
   return (
-    <div className="w-full text-black">
+    <div className="w-full text-black max-w-screen">
         <Title user={this_user} text="[name]'s Profile" subtitle={goddess_msg}/>
-        <div className="p-4 mx-auto w-full">
+        <div className="mx-auto w-full">
         <div className="w-full p-4 bg-[#DBC491] rounded-lg">
         <div className="grid gap-3 grid-cols-3">
     {catalog.map(b => (
