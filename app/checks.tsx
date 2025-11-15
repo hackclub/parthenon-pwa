@@ -8,10 +8,10 @@ export async function doChecks(USER_ID: any) {
         redirect('/login')
       }
     
-      //put in place b4 unveiling!!
-      if (USER_ID!="U06TV3F4HEU") {
-        redirect('/countdown')
-      }
+      // //put in place b4 unveiling!!
+      // if (USER_ID!="U06TV3F4HEU") {
+      //   redirect('/countdown')
+      // }
     
       const this_user = await getInfoFromID(USER_ID)
     

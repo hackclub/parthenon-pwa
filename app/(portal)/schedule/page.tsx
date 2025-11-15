@@ -25,21 +25,14 @@ export default async function Schedule() {
           description:
             "Learn how to make your own 2d platformer in Godot!",
           host: "Tongyu",
-          time: "11 am",
+          time: "10 am",
         },
         {
-          title: "Frontend Skills - React Workshop",
+          title: "Frontend Skills - Next.JS Workshop",
           description:
-            "Learn the fundamentals of React and how to build dynamic UI's!",
+            "Create a dynamic, full-stack site with Next.js and React!!",
           host: "Celeste",
-          time: "6 PM - 7 PM",
-        },
-        {
-          title: "Backend Skills - Next.js Workshop",
-          description:
-            "Mauris ipsum nulla, malesuada ut, efficitur eu, tempor et, tellus. Nulla facilisi. Morbi imperdiet, mauris ac auctor dictum.",
-          host: "Celeste",
-          time: "8 - 9 PM",
+          time: "10 AM",
         },
       ];
 
