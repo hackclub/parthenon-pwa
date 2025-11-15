@@ -48,7 +48,7 @@ var classes = "border rounded-lg p-4 bg-[#DBC491]"
         alt=""
         width={3000}
         height={1500}
-        className="w-1/3 m-auto god_img"
+        className="lg:w-1/3 md:w-1/2 w-3/4 m-auto god_img"
         />
         <h1 className="font-[Augustus]">{this_goddess.name}</h1>
         <p className="font-[Romanica]">{this_goddess.desc}</p>
