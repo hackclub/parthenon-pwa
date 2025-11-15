@@ -98,7 +98,7 @@ export async function POST(req: Request) {
 
     //NOW have the slack bot do smth
     const username = await getInfoFromID(USER_ID)
-    await sendSlackMessage("C09D6QF2DS4", `*${username} just earned ${badge_record[0].get("name")}, earning ${goddess_name} ${badge_record[0].get("points")} points! Hoorah!*`);
+    await sendSlackMessage("C09T22YH3FG", `*${username} just earned ${badge_record[0].get("name")}, earning ${goddess_name} ${badge_record[0].get("points")} points! Hoorah!*`);
 
     //FINALLY redirect
 
